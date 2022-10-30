@@ -91,10 +91,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int number = 0;
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  if (number >= 13) number  =0;
+		  Testingclock(number++);
+		  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -166,7 +169,67 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+void Testingclock(int num){
+	HAL_GPIO_WritePin (GPIOA , GPIO_PIN_4 | GPIO_PIN_5 | GPIO_PIN_6 |
+	GPIO_PIN_7 | GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 |
+	GPIO_PIN_11 | GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 |
+	GPIO_PIN_15 , GPIO_PIN_SET );
+switch(num){
 
+case 1 :{
+
+	 HAL_GPIO_WritePin (GPIOA , GPIO_PIN_4 , GPIO_PIN_RESET );
+	 HAL_Delay(1000);
+	 break;
+}
+case 2 :{
+	 HAL_GPIO_WritePin (GPIOA , GPIO_PIN_5 , GPIO_PIN_RESET );
+	 HAL_Delay(1000);
+		 break;
+}
+case 3 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_6 , GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 4 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_7 , GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 5 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_8 , GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 6 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_9 , GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 7 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_10 , GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 8 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_11, GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 9 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_12, GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 10 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_13, GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 11:{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_14 , GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+case 12 :{ HAL_GPIO_WritePin (GPIOA , GPIO_PIN_15, GPIO_PIN_RESET );
+HAL_Delay(1000);
+break;
+}
+default:{break;}
+}
+}
 /* USER CODE END 4 */
 
 /**
